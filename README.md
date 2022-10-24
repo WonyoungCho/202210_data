@@ -38,3 +38,6 @@ grep -i 'word1\|word2' MP.txt.new
 - `[^]`: 문자 제외, `[^abc123]er`: `er`앞에 `a,b,c,1,2,3` 들어 있지 않은 라인.
 
 
+```bash
+egrep `egrep -w 'word1|word2' MP.txt.new|awk '{print $1}'|paste -sd\|` MP.txt.new
+```
