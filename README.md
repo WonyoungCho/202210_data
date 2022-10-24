@@ -23,7 +23,7 @@ paste -d"\t" MP_1.txt MP_2.txt MP_3.txt MP_4.txt MP_5.txt MP_6.txt > MP.txt.new
 ```bash
 grep -i 'word1\|word2' MP.txt.new
 ```
-> Option
+> **Option**
 - `-i`: 대소문자 구분없이
 - `-n`: 라인넘버와 함께 출력
 - `-w`: 단어로 검색
