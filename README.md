@@ -19,3 +19,7 @@ awk -F"\t" '{print $19"\t"$20"\t"$21"\t"$22}' MP_re.txt |awk '{print $1"\t"$2"\t
 paste -d"\t" MP_1.txt MP_2.txt MP_3.txt MP_4.txt MP_5.txt MP_6.txt > MP.txt.new
 ```
 
+# Search
+```
+grep 'word1\|word2' MP.txt.new
+```
