@@ -21,5 +21,7 @@ paste -d"\t" MP_1.txt MP_2.txt MP_3.txt MP_4.txt MP_5.txt MP_6.txt > MP.txt.new
 
 # Search
 ```
-grep 'word1\|word2' MP.txt.new
+grep -i 'word1\|word2' MP.txt.new
 ```
+
+- `i`: 대소문자 구분없이 
