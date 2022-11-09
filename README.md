@@ -47,7 +47,7 @@ egrep `egrep -w 'word1|word2' MP.txt.new|awk '{print $1}'|paste -sd\|` MP.txt.ne
 ```bash
 grep "kidney" llt.txt|awk '{print $1}'|xargs -P $(nproc) -I{} awk '$3=={}' ADR.txt.new > searched1.txt
 
-or
+OR
 
 grep "kidney" llt.txt|awk '{print $1}'|xargs -P $(nproc) -I{} grep \t*\t\*{} ADR.txt.new > searched2.txt
 ```
