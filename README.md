@@ -49,5 +49,5 @@ grep "kidney" llt.txt|awk '{print $1}'|xargs -P $(nproc) -I{} awk '$3=={}' ADR.t
 
 OR
 
-grep "kidney" llt.txt|awk '{print $1}'|xargs -P $(nproc) -I{} grep -c $'.*\t.*\t{}' ADR.txt.new > searched2.txt
+time grep "acute kidney" llt.txt|awk '{print $1}'|xargs -P $(nproc) -I{} sh -c 'grep -P ".*\t.*\t$1" ADR.txt.new > "temp/$1.out"' -- {}
 ```
