@@ -51,3 +51,21 @@ OR
 
 time grep "kidney" llt.txt|awk '{print $1}'|xargs -P $(nproc) -I{} sh -c 'grep -P ".*\t.*\t$1" ADR.txt.new > "temp/$1.out"' -- {}
 ```
+
+# Search 4
+```bash
+#!/usr/bin/env bash
+
+args=$@
+old="$IFS"
+IFS="_"
+dir="$*"
+IFS="$old"
+
+rm -r "temp/$dir"
+mkdir -p "temp/$dir"
+
+time grep "${dss}" llt.txt|awk '{print $1}'|xargs -P $(($(nproc)-1)) -I{} sh -c 'grep -P ".*\t.*\t$1" ADR.txt.new > "temp/$2/$1.out"' -- {} $dir
+
+find temp/$dir -size 0 -print -delete
+```
